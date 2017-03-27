@@ -306,7 +306,7 @@ public class BinaryTreeQuestions {
     */
 
 
-    /* bad sokution*/
+    /* bad solution*/
     public static void printTopViewOfBR(TreeNode binaryTreeNode){
         TreeNode head = binaryTreeNode;
         Node n = new Node(binaryTreeNode.data);
