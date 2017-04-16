@@ -330,8 +330,5 @@ public class BinaryTreeQuestions {
         while(!q.isEmpty()){
             System.out.println(q.deQueue().data);
         }
-
     }
-
-
 }
