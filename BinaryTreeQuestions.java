@@ -167,7 +167,7 @@ public class BinaryTreeQuestions {
         return neighbours;
     }
 
-    /* using bfs */
+    /* using bfs (can */
     public static boolean directRootExists(Node n1, Node n2, ArrayList<Node> nodes, int m[][]) {
         Queue q = new Queue();
         n1.visited = true;
