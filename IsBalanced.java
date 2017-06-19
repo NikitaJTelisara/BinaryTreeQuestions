@@ -40,7 +40,6 @@ public class IsBalanced {
         System.out.println(isbalanced1(k1, k1.numberOfChildren));
     }
 
-    /* when multip;e children*/
     public static boolean isBalanced(TreeNode n) {
         if (n == null) {
             return true;
@@ -51,7 +50,6 @@ public class IsBalanced {
             return false;
         }
     }
-
 
     public static boolean isNodeBalanced(TreeNode n) {
         if (n == null) {
@@ -66,17 +64,18 @@ public class IsBalanced {
         }
     }
 
+    /* when multip;e children*/
     public static boolean isbalanced1(TreeNode n, int numberOfChildren) {
         if (n == null) {
             return true;
         }
         if (isNodeBalanced1(n, numberOfChildren)) {
             for (TreeNode k : n.children) {
-                if(!isbalanced1(k,numberOfChildren)){
-                   return false;
+                if (!isbalanced1(k, numberOfChildren)) {
+                    return false;
                 }
             }
-        }else {
+        } else {
             return false;
         }
         return true;
@@ -85,11 +84,9 @@ public class IsBalanced {
     public static boolean isNodeBalanced1(TreeNode n, int numberOfChildren) {
         if (n == null) {
             return true;
-        }
-        else if (n.numberOfChildren == 0) {
+        } else if (n.numberOfChildren == 0) {
             return true;
-        }
-        else if (n.numberOfChildren != numberOfChildren) {
+        } else if (n.numberOfChildren != numberOfChildren) {
             return false;
         }
         return true;
