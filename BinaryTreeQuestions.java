@@ -245,17 +245,16 @@ public class BinaryTreeQuestions {
         return lists;
     }
 
+    /* incorrect solution */
     public static boolean checkBST(TreeNode node) {
         if (node == null) {
             return false;
         }
-        if (checkEachNode(node)) {
-            return (checkEachNode(node.left) && checkEachNode(node.right));
+        if (checkEachNode(node)) {  // use checkBST here
+            return (checkBST(node.left) && checkBST(node.right));
         }
         return false;
     }
-
-    /* 4.5 check if Tree is BST */
     public static boolean checkEachNode(TreeNode node) {
         if (node == null) {
             return true;
