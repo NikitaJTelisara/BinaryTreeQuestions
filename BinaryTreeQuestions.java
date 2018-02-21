@@ -140,7 +140,8 @@ public class BinaryTreeQuestions {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
-    /* 4.1 check if a binary tree is balanced */
+    /* 4.1 check if a binary tree is balanced 
+    Is balanced -> left subtree and right suntree of a node has height diff of 1. (Except the root node)*/
     public static boolean isBalancesTree(TreeNode node) {
         if (getHeight(node) == -1) {
             return false;
