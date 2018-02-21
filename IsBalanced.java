@@ -3,6 +3,8 @@ import sun.reflect.generics.tree.Tree;
 import java.util.ArrayList;
 
 public class IsBalanced {
+    
+    // Amazon Question, IsBalanced here is # of Left child and # of right child are equal
 
     public static void main(String[] args) {
         TreeNode j1 = new TreeNode(1);
