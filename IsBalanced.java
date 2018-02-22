@@ -47,23 +47,19 @@ public class IsBalanced {
             return true;
         }
         if (isNodeBalanced(n)) {
-            return isBalanced(n.left) && isBalanced(n.right);
-        } else {
-            return false;
+            return (isBalanced(n.left) && isBalanced(n.right));
         }
+        return false;
     }
 
     public static boolean isNodeBalanced(TreeNode n) {
-        if (n == null) {
-            return true;
-        }
         if (n.left == null && n.right == null) {
             return true;
-        } else if (n.left != null && n.right != null) {
-            return true;
-        } else {
-            return false;
         }
+        if (n.left != null && n.right != null) {
+            return true;
+        }
+        return false;
     }
 
     /* when multip;e children*/
