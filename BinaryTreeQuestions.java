@@ -121,32 +121,29 @@ public class BinaryTreeQuestions {
 
     }
 
-    public static int getHeight(TreeNode node) {
+     public static int getHeight(TreeNode node) {
         if (node == null) {
-            return 0;
+            return -1;
         }
         int leftHeight = getHeight(node.left);
-        if (leftHeight == -1) {
-            return -1;
+        if (leftHeight == Integer.MIN_VALUE) {
+            return Integer.MIN_VALUE;
         }
         int rightHeight = getHeight(node.right);
-        if (rightHeight == -1) {
-            return -1;
+        if (rightHeight == Integer.MIN_VALUE) {
+            return Integer.MIN_VALUE;
         }
         int heightDiff = leftHeight - rightHeight;
         if (Math.abs(heightDiff) > 1) {
-            return -1;
+            return Integer.MIN_VALUE;
         }
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
-    /* 4.1 check if a binary tree is balanced 
+    /* 4.1 check if a binary tree is balanced
     Is balanced -> left subtree and right suntree of a node has height diff of 1. (Except the root node)*/
     public static boolean isBalancesTree(TreeNode node) {
-        if (getHeight(node) == -1) {
-            return false;
-        }
-        return true;
+        return (getHeight(node) != Integer.MIN_VALUE);
     }
 
     public static ArrayList<Node> findNeighbours(Node n1, ArrayList<Node> nodes, int m[][]) {
