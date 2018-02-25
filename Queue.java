@@ -1,29 +1,29 @@
+package BST;
+
 public class Queue {
-    Node first, last;
+    QItem rear;
+    QItem front;
 
-    public void enQueue(Node n) {
-        if (first != null) {
-            last.next = n;
-            last = last.next;
-        } else {
-            first = n;
-            last = n;
+    public QItem dequeue() {
+        QItem n = null;
+        if (front != null) {
+            n = front;
+            front = front.next;
+        }
+        return n;
+    }
+
+    public void enqueue(QItem n) {
+        if (front != null) {
+            rear.next = n;
+            rear = n;
+        }else{
+            front = n;
+            rear = front;
         }
     }
 
-    public Node deQueue() {
-        if (first != null) {
-            Node n = first;
-            first = first.next;
-            return n;
-        }
-        return null;
-    }
-
-    boolean isEmpty() {
-        if (first == null) {
-            return true;
-        }
-        return false;
+    public boolean isEmpty(){
+        return front== null;
     }
 }
